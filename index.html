@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopNew - Vêtements & Chaussures</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>ShopNew</h1>
+  <nav>
+    <button class="filter-btn active" onclick="filterCategory('all', this)">Tout</button>
+    <button class="filter-btn" onclick="filterCategory('vêtements', this)">Vêtements</button>
+    <button class="filter-btn" onclick="filterCategory('chaussures', this)">Chaussures</button>
+    <button id="cartToggle">Voir le panier 🛒</button>
+  </nav>
+</header>
+
+<main>
+  <div class="products">
+    <div class="product" data-category="vêtements" data-name="T-shirt" data-price="15">
+      <img src="https://i.postimg.cc/Hnv48xjy/1764077723503.jpg" alt="T-shirt">
+      <h3>T-shirt</h3>
+      <p>Prix: 15€</p>
+      <button onclick="addToCart(this)">Ajouter au panier</button>
+    </div>
+
+    <div class="product" data-category="vêtements" data-name="Jean" data-price="30">
+      <img src="https://i.postimg.cc/7YbjsJ3d/IMG-20251125-144656.jpg" alt="Jean">
+      <h3>Jean</h3>
+      <p>Prix: 30€</p>
+      <button onclick="addToCart(this)">Ajouter au panier</button>
+    </div>
+
+    <div class="product" data-category="chaussures" data-name="Baskets" data-price="50">
+      <img src="https://i.postimg.cc/rpdS7cnV/IMG-20251125-145249.jpg" alt="Baskets">
+      <h3>Baskets</h3>
+      <p>Prix: 20€</p>
+      <button onclick="addToCart(this)">Ajouter au panier</button>
+    </div>
+
+    <div class="product" data-category="chaussures" data-name="Sandales" data-price="25">
+      <img src="https://i.postimg.cc/L6K21TKG/IMG-20251125-145909.jpg" alt="Sandales">
+      <h3>Sandales</h3>
+      <p>Prix: 25€</p>
+      <button onclick="addToCart(this)">Ajouter au panier</button>
+    </div>
+
+    <div class="product" data-category="vêtements" data-name="la veste" data-price="30">
+      <img src="https://i.postimg.cc/kGB5jXX9/IMG-20251125-152011.jpg" alt="la veste">
+      <h3>la veste</h3>
+      <p>Prix: 40€</p>
+      <button onclick="addToCart(this)">Ajouter au panier</button>
+    </div>
+
+    <div class="product" data-category="vêtements" data-name="jupe" data-price="30">
+      <img src="https://i.postimg.cc/8kW9vgbz/IMG-20251125-151412.jpg" alt="jupe">
+      <h3>jupe</h3>
+      <p>Prix: 25€</p>
+      <button onclick="addToCart(this)">Ajouter au panier</button>
+    </div>
+  </div>
+</main>
+
+<div id="checkoutModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeCheckout()">&times;</span>
+    <h2>Paiement</h2>
+    <form id="checkoutForm">
+      <label>Nom:</label>
+      <input type="text" id="name" required>
+      <label>Email:</label>
+      <input type="email" id="email" required>
+      <label>Adresse complète (Algérie):</label>
+      <input type="text" id="address" placeholder="Rue, Numéro, Ville, Wilaya" required>
+      <label>Méthode de paiement:</label>
+      <select id="payment" required>
+        <option value="Carte">Carte</option>
+        <option value="Paypal">Paypal</option>
+        <option value="Cash">Cash à la livraison</option>
+      </select>
+      <button type="submit">Payer</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 ShopNew. Tous droits réservés.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
